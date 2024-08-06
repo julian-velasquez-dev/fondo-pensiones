@@ -1,6 +1,7 @@
 package com.prueba_tecnica.fondo_pensiones.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -41,23 +42,22 @@ public class Client {
 	/**
 	 * The list of funds associated with the client.
 	 */
-	private List<Fund> funds;
+	private List<Fund> funds = new ArrayList<>();
 	
 	/**
 	 * The list of the transaction made by the client.
 	 */
-	private List<Transaction> transactions;
+	private List<Transaction> transactions = new ArrayList<>();
 	
 	public Client(String id, String clientId, String name, String address, BigDecimal balance, List<Fund> funds,
-			List<Transaction> transactions) {
-		super();
-		this.id = id;
-		this.clientId = clientId;
-		this.name = name;
-		this.address = address;
-		this.balance = balance;
-		this.funds = funds;
-		this.transactions = transactions;
+            List<Transaction> transactions) {
+	  this.id = id;
+	  this.clientId = clientId;
+	  this.name = name;
+	  this.address = address;
+	  this.balance = balance;
+	  this.funds = funds != null ? funds : new ArrayList<>();
+	  this.transactions = transactions != null ? transactions : new ArrayList<>();
 	}
 
 	public Client() {
