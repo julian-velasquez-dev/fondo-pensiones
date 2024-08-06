@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "28c55ce3-8c17-4c85-912f-a7f081974400",
+		"name": "Pension fund ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5708040"
+	},
+	"item": [
+		{
+			"name": "Subscribe to fund",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "clientId",
+							"value": "C001",
+							"type": "text"
+						},
+						{
+							"key": "fundId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "notification",
+							"value": "email",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/funds/subscribe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"funds",
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe to fund Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "clientId",
+							"value": "C001",
+							"type": "text"
+						},
+						{
+							"key": "fundId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "notification",
+							"value": "email",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/funds/cancel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"funds",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/funds/transactions?clientId=C001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"funds",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "clientId",
+							"value": "C001"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
